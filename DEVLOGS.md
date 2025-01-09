@@ -6,3 +6,8 @@
     <li>Some components of the project has been initialized</li>
     <li>Created a script for the database for testing purposes</li>
 </ul>
+<h3>01/10/25</h3>
+<ul>
+    <li>Added functionalities to certain collections</li>
+    <li>Revising the naming conventions of some fields in the database such as the name field</li>
+</ul>
