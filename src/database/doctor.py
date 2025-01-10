@@ -43,14 +43,40 @@ class DoctorsCollection:
             print(f"An error has occurred at DoctorsCollection: {e}")
 
     # READ
-    def has_doctor(doctor_name: dict[str, str]):
+    def has_doctor(doctor_name: dict[str, str], specialty: str):
         """Check if the doctor exists in the database"""
         try:
             return (
                 DoctorsCollection
                 .get_collection()
                 .find(
-                    {"doctor_name": doctor_name}
+                    {
+                        "doctor_name": doctor_name,
+                        "specialty": specialty
+                    },
+                    {
+                        "_id": 0,
+                        "doctor_name": 1
+                    }
+                )
+            )
+        except Exception as e:
+            print(f"An error has occurred at DoctorsCollection: {e}")
+
+    def get_doctor_id(doctor_name: dict[str, str], specialty: str):
+        """Returns the string representation of the doctor _id ObjectId"""
+        try:
+            return (
+                DoctorsCollection
+                .get_collection()
+                .find_one(
+                    {
+                        "doctor_name": doctor_name,
+                        "specialty": specialty
+                    },
+                    {
+                        "_id": 1,
+                    }
                 )
             )
         except Exception as e:

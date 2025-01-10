@@ -7,3 +7,11 @@ class PrescriptionsCollection:
 
     def get_collection() -> Collection:
         return PrescriptionsCollection.__COLLECTION
+    
+    # CREATE
+    def insert_prescription():
+        pass
+    
+    # READ
+    # UPDATE
+    # DELETE

@@ -1,4 +1,5 @@
 from pymongo.collection import Collection
+from pymongo.cursor import Cursor
 from mongodb import DatabaseHelper
 from bson import ObjectId
 
@@ -32,12 +33,19 @@ class PatientsCollection:
         try:
             collection = PatientsCollection.get_collection()
             patient_fullname = {
-                    "first_name": patient_name["first_name"],
-                    "middle_initial": patient_name["middle_initial"],
-                    "last_name": patient_name["last_name"],
-                    "suffix": patient_name["suffix"]
+                "first_name": patient_name["first_name"],
+                "middle_initial": patient_name["middle_initial"],
+                "last_name": patient_name["last_name"],
+                "suffix": patient_name["suffix"]
             }
-            if PatientsCollection.has_patient(patient_fullname):
+            demograph_data = {
+                "age": demograph["age"],
+                "birth": demograph["birth"],
+                "gender": demograph["gender"],
+                "sex": demograph["sex"],
+                "ethnicity": demograph["ethnicity"],
+            }
+            if PatientsCollection.has_patient(patient_fullname, demograph):
                 return None
             patient_data = {
                 "patient_name": patient_name,
@@ -56,17 +64,49 @@ class PatientsCollection:
             print(f"An error occurred at the PatientsCollection: {e}")
 
     # READ
-    def has_patient(patient_name: dict):
+    def has_patient(patient_name: dict[str, str], demograph: dict[str, str | int]) -> Cursor:
         """Checks if patient document exists in the database"""
         try:
             collection = PatientsCollection.get_collection()
-            patient_fullname = {
-                "patient_name.first_name": patient_name["first_name"],
-                "patient_name.middle_initial": patient_name["middle_initial"],
-                "patient_name.last_name": patient_name["last_name"],
-                "patient_name.suffix": patient_name["suffix"]
+            data = {
+                "patient_name": {
+                    "first_name": patient_name["first_name"],
+                    "middle_initial": patient_name["middle_initial"],
+                    "last_name": patient_name["last_name"],
+                    "suffix": patient_name["suffix"]
+                },
+                "demograph": {
+                    "age": demograph["age"],
+                    "birth": demograph["birth"],
+                    "gender": demograph["gender"],
+                    "sex": demograph["sex"],
+                    "ethnicity": demograph["ethnicity"],
+                }
             }
-            return collection.find(patient_fullname)
+            return collection.find(data)
+        except Exception as e:
+            print(f"An error occurred at the PatientsCollection: {e}")
+
+    def get_patient_id(patient_name: dict[str, str], demograph: dict[str, str | int]) -> str:
+        """Returns the string representation of the patient _id ObjectId"""
+        try:
+            collection = PatientsCollection.get_collection()
+            data = {
+                "patient_name": {
+                    "first_name": patient_name["first_name"],
+                    "middle_initial": patient_name["middle_initial"],
+                    "last_name": patient_name["last_name"],
+                    "suffix": patient_name["suffix"]
+                },
+                "demograph": {
+                    "age": demograph["age"],
+                    "birth": demograph["birth"],
+                    "gender": demograph["gender"],
+                    "sex": demograph["sex"],
+                    "ethnicity": demograph["ethnicity"],
+                }
+            }
+            return str(collection.find_one(data, {"_id": 1})["_id"])
         except Exception as e:
             print(f"An error occurred at the PatientsCollection: {e}")
         
