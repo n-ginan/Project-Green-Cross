@@ -1,9 +1,9 @@
 from pymongo.collection import Collection
 from mongodb import DatabaseHelper
 
-class BillingCollection:
+class BillingsCollection:
 
     __COLLECTION = DatabaseHelper.initialize_database()["billings"]
 
     def get_collection() -> Collection:
-        return BillingCollection.__COLLECTION
+        return BillingsCollection.__COLLECTION

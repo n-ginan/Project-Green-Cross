@@ -2,12 +2,12 @@ from pymongo.collection import Collection
 from mongodb import DatabaseHelper
 from user import UserCollection
 
-class DoctorCollection:
+class DoctorsCollection:
 
     __COLLECTION = DatabaseHelper.initialize_database()["doctors"]
 
     def get_collection() -> Collection:
-        return DoctorCollection.__COLLECTION
+        return DoctorsCollection.__COLLECTION
     
     # CREATE
     def insert_doctor(
@@ -23,10 +23,10 @@ class DoctorCollection:
         if not the inserted_id will be returned
         """
         try:
-            if DoctorCollection.has_doctor(doctor_name):
+            if DoctorsCollection.has_doctor(doctor_name):
                 return None
             return (
-                DoctorCollection
+                DoctorsCollection
                 .get_collection()
                 .insert_one(
                     {
@@ -40,18 +40,18 @@ class DoctorCollection:
                 )
             ).inserted_id
         except Exception as e:
-            print(f"An error has occurred at DoctorCollection: {e}")
+            print(f"An error has occurred at DoctorsCollection: {e}")
 
     # READ
     def has_doctor(doctor_name: dict[str, str]):
         """Check if the doctor exists in the database"""
         try:
             return (
-                DoctorCollection
+                DoctorsCollection
                 .get_collection()
                 .find(
                     {"doctor_name": doctor_name}
                 )
             )
         except Exception as e:
-            print(f"An error has occurred at DoctorCollection: {e}")
+            print(f"An error has occurred at DoctorsCollection: {e}")

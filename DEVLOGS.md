@@ -10,4 +10,5 @@
 <ul>
     <li>Added functionalities to certain collections</li>
     <li>Revising the naming conventions of some fields in the database such as the name field</li>
+    <li>Revision of the database schema (addition of medicine collection for the pharmacy)
 </ul>

@@ -2,13 +2,13 @@ from pymongo.collection import Collection
 from mongodb import DatabaseHelper
 from bson import ObjectId
 
-class PatientCollection:
+class PatientsCollection:
 
     __COLLECTION = DatabaseHelper.initialize_database()["patients"]
 
     def get_collection() -> Collection:
         try:
-            return PatientCollection.__COLLECTION
+            return PatientsCollection.__COLLECTION
         except Exception as e:
             print(f"An error occurred at the PatientsCollection: {e}")
     
@@ -30,14 +30,14 @@ class PatientCollection:
         if not it will return an ObjectId
         """
         try:
-            collection = PatientCollection.get_collection()
+            collection = PatientsCollection.get_collection()
             patient_fullname = {
                     "first_name": patient_name["first_name"],
                     "middle_initial": patient_name["middle_initial"],
                     "last_name": patient_name["last_name"],
                     "suffix": patient_name["suffix"]
             }
-            if PatientCollection.has_patient(patient_fullname):
+            if PatientsCollection.has_patient(patient_fullname):
                 return None
             patient_data = {
                 "patient_name": patient_name,
@@ -59,7 +59,7 @@ class PatientCollection:
     def has_patient(patient_name: dict):
         """Checks if patient document exists in the database"""
         try:
-            collection = PatientCollection.get_collection()
+            collection = PatientsCollection.get_collection()
             patient_fullname = {
                 "patient_name.first_name": patient_name["first_name"],
                 "patient_name.middle_initial": patient_name["middle_initial"],
