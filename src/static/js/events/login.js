@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    loginInputError()
     login()    
 })
 
@@ -11,7 +10,7 @@ function login() {
 
         if (!formData["username"] || !formData["password"]) {
             loginInputError(formData["username"], formData["password"])
-            // Create the functionality for if a certain ui is empty
+            textBoxValidation(formData["username"], formData["password"])
             return
         }
 
@@ -74,7 +73,7 @@ function login() {
     })
 }
 
-function loginInputError(username = null, password = null) {
+function loginInputError(usernameInput = null, passwordInput = null) {
     const username = document.getElementById("username")
     const password = document.getElementById("password")
     const styleSheet = document.styleSheets[0]
@@ -89,22 +88,43 @@ function loginInputError(username = null, password = null) {
         }
     `)
 
-    if (username === null) {
-        username.style.border = "1px solid red"
-        username.style.animation = "horizontal-shake 0.5s cubic-bezier( 0, 0, 0, 1 )"
-    } else if (password === null) {
-        password.style.border = "1px solid red"
-        password.style.animation = "horizontal-shake 0.5s cubic-bezier( 0, 0, 0, 1 )"
-    } else {
+    if (!usernameInput && !passwordInput) {
         username.style.border = "1px solid red"
         password.style.border = "1px solid red"
-        username.style.animation = "horizontal-shake 0.5s cubic-bezier( 0, 0, 0, 1 )"
-        password.style.animation = "horizontal-shake 0.5s cubic-bezier( 0, 0, 0, 1 )"
+        triggerAnimaton(username)
+        triggerAnimaton(password)
+    } else if (!usernameInput) {
+        username.style.border = "1px solid red"
+        triggerAnimaton(username)
+        password.style.border = null
+    } else if (!passwordInput) {
+        password.style.border = "1px solid red"
+        triggerAnimaton(password)
+        username.style.border = null
     }
     // ease-in-out
     // cubic-bezier( 0, 0, 0, 1 )
 }
 
-function emptyField() {
+function triggerAnimaton(textBox) {
+    textBox.style.animation = "none"
+    textBox.offsetHeight
+    textBox.style.animation = "horizontal-shake 0.5s cubic-bezier( 0, 0, 0, 1 )"
+}
 
+function textBoxValidation(username, password) {
+    const inputErrorText = document.getElementById("inputErrorText")
+
+    if (!username && !password) {
+        inputErrorText.innerText = "both fields are empty"
+        inputErrorText.hidden = false
+    } else if (!username) {
+        inputErrorText.innerText = "username field is empty"
+        inputErrorText.hidden = false
+    } else if (!password) {
+        inputErrorText.innerText = "password field is empty"
+        inputErrorText.hidden = false
+    } else {
+        inputErrorText.hidden = true
+    }
 }

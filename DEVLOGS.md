@@ -17,4 +17,5 @@
 <ul>
     <li>Realized that doing whats in front of you first is the efficient way of faster development</li>
     <li>initially finished the api-entrypoint, input validation and redirection is still not included</li>
+    <li>add(animation): added some animation on error handling if there are user input errors</li>
 </ul>

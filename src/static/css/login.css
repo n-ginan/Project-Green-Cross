@@ -35,6 +35,8 @@ body {
 .username {
     height: 13%;
     width: 80%;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 14px;
     position: absolute;
     padding-left: 5px;
     top: 50px;
@@ -45,6 +47,8 @@ body {
 .password {
     height: 13%;
     width: 80%;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 14px;
     position: absolute;
     padding-left: 5px;
     top: 110px;
@@ -52,19 +56,38 @@ body {
     border: 0px;
 }
 
+.input-error-text {
+    color: rgb(249, 15, 15);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 14px;
+    position: absolute;
+    top: 150px;
+}
+
 .login-btn {
     height: 13%;
     width: 80%;
     background-color: #3c84fb;
     color: #FFFFFF;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.4;
     position: absolute;
-    top: 200px;
+    top: 210px;
     border-radius: 5px;
     border: 0px;
 }
 
 .login-btn:hover {
     cursor: pointer;
+    font-size: 15px;
+    box-shadow: 0 1px 4px 0 rgba(109, 108, 108, 0.8), 0 4px 3px 0 rgba(228, 228, 228, 0.4);
+}
+
+.login-btn:active {
+    box-shadow: none;
+    font-size: 14px;
 }
 
 .image-container {
