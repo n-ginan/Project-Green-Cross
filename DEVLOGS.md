@@ -16,8 +16,9 @@
 <h3>01/11/25</h3>
 <ul>
     <li>Realized that doing whats in front of you first is the efficient way of faster development</li>
-    <li>initially finished the api-entrypoint, input validation and redirection is still not included</li>
-    <li>add(animation): added some animation on error handling if there are user input errors</li>
-    <li>feat(animation): loginpage ui animation is done, but the design isnt finalized yet</li>
-    <li>refactor(animation): added some login button transition goodness</li>
+    <li>Initially finished the api-entrypoint, input validation and redirection is still not included</li>
+    <li>Added some animation on error handling if there are user input errors</li>
+    <li>Login page ui animation is done, but the design isnt finalized yet</li>
+    <li>Added some login button transition goodness</li>
+    <li>Initialized the raw design of the admin dashboard, have an idea on what I am gonna do with it</li>
 </ul>
