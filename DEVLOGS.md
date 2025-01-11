@@ -21,4 +21,6 @@
     <li>Login page ui animation is done, but the design isnt finalized yet</li>
     <li>Added some login button transition goodness</li>
     <li>Initialized the raw design of the admin dashboard, have an idea on what I am gonna do with it</li>
+    <li>Revised the database schema once again</li>
+    <li>Initially created the credential input page</li>
 </ul>

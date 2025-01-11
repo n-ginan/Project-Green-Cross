@@ -2,6 +2,55 @@ body {
     margin: 0;
     overflow-y: hidden;
     overflow-x: hidden;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.background-credential {
+    background-color: rgb(70, 138, 255);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 130px;
+}
+
+.tips-section {
+    background-color: brown;
+    height: 650px;
+    width: 400px;
+}
+
+.input-credential-card {
+    background-color: aliceblue;
+    height: 650px;
+    width: 700px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px
+}
+
+.name-row, .contact-row, .password-row, .doctor-row {
+    background-color: aqua;
+    height: 100px;
+}
+
+.finish-btn {
+    background-color: #3c84fb;
+    width: 300px;
+    height: 50px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.4;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    border: 0px;
 }
 
 .login-container-background {
@@ -35,7 +84,6 @@ body {
 .username {
     height: 13%;
     width: 80%;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 14px;
     position: absolute;
     padding-left: 5px;
@@ -47,7 +95,6 @@ body {
 .password {
     height: 13%;
     width: 80%;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 14px;
     position: absolute;
     padding-left: 5px;
@@ -58,7 +105,6 @@ body {
 
 .input-error-text {
     color: rgb(249, 15, 15);
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 14px;
     position: absolute;
     top: 150px;
@@ -69,7 +115,6 @@ body {
     width: 80%;
     background-color: #3c84fb;
     color: #FFFFFF;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 0.4;
@@ -79,14 +124,14 @@ body {
     border: 0px;
 }
 
-.login-btn:hover {
+.login-btn:hover, .finish-btn:hover {
     cursor: pointer;
     font-size: 15px;
     box-shadow: 0 1px 4px 0 rgba(109, 108, 108, 0.8), 0 4px 3px 0 rgba(228, 228, 228, 0.4);
     transition-duration: 0.4s;
 }
 
-.login-btn:active {
+.login-btn:active, .finish-btn:active{
     box-shadow: none;
     font-size: 14px;
     transition-duration: 0.2s;
