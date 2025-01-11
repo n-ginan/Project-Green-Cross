@@ -13,3 +13,7 @@
     <li>Revision of the database schema (addition of medicine collection for the pharmacy)</li>
     <li>Added the cards for the UI in the kanban board at my Trello</li>
 </ul>
+<h3>01/11/25</h3>
+<ul>
+    <li>Realized that doing whats in front of you first is the efficient way of faster development</li>
+</ul>
