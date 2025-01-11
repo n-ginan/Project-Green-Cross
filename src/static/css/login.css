@@ -83,11 +83,13 @@ body {
     cursor: pointer;
     font-size: 15px;
     box-shadow: 0 1px 4px 0 rgba(109, 108, 108, 0.8), 0 4px 3px 0 rgba(228, 228, 228, 0.4);
+    transition-duration: 0.4s;
 }
 
 .login-btn:active {
     box-shadow: none;
     font-size: 14px;
+    transition-duration: 0.2s;
 }
 
 .image-container {
