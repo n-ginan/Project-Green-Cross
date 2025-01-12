@@ -24,3 +24,7 @@
     <li>Revised the database schema once again</li>
     <li>Initially created the credential input page</li>
 </ul>
+<h3>01/11/25</h3>
+<ul>
+    <li>Finalized the data/credentials fill form at the credential page, the design and its logic for user errors are still not done yet</li>
+</ul>

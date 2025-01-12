@@ -33,7 +33,7 @@ body {
     padding: 10px
 }
 
-.name-row, .contact-row, .password-row, .doctor-row {
+.name-row, .demograph-row, .password-row, .address-row {
     background-color: aqua;
     height: 100px;
 }
@@ -102,6 +102,37 @@ body {
     border-radius: 5px;
     border: 0px;
 }
+
+.first-name, .middle-initial, .last-name, .suffix, .age, .birth, .nationality, .mobile-number,
+.email, .street, .division, .house-number, .city, .region, .zip-code, .religion, .credential-password, .confirm-password {
+    height: 40px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid rgb(197, 197, 197);
+    padding-left: 5px;
+}
+
+.middle-initial, .age, .suffix, .house-number {
+    width: 55px
+}
+
+.first-name {
+    width: 180px;
+}
+
+.last-name, .mobile-number, .religion, .city, .street {
+    width: 130px;
+}
+
+
+.email {
+    width: 230px;
+}
+
+.zip-code {
+    width: 75px;
+}
+
 
 .input-error-text {
     color: rgb(249, 15, 15);
