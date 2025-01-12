@@ -128,3 +128,44 @@ function textBoxValidation(username, password) {
         inputErrorText.hidden = true
     }
 }
+
+function credential() {
+    const finishBtn = document.getElementById("finishBtn")
+    const form = document.getElementById("credentialInputForm")
+
+    finishBtn.addEventListener("click", () => {
+        const formData = Object.fromEntries(new FormData(form).entries())
+        const url = "http://127.0.0.1:5000/credential-registration"
+        const interface = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Cache-Control": "no-store"
+            },
+            body: JSON.stringify({
+                "full_name": `${formData["first_name"]} ${formData["middle_initial"]}. ${formData["last_name"]} ${formData["suffix"]}`,
+                "demograph": {
+                    "age": formData["age"],
+                    "birthdate": formData["birth"],
+                    "sex": formData["sex"],
+                    "nationality": formData["nationality"],
+                    "religion": formData["religion"]
+                },
+                "contact": {
+                    "mobile_number": formData["mobile_number"],
+                    "email": formData["email"]
+                },
+                "full_address": `${formData["house_number"]} ${formData["street"]} street, ${divisionOrder(formData["division_name"], formData["division_type"])}\n${formData["city"]} ${formData["zip_code"]}`
+            })
+        }
+    })
+}
+
+function divisionOrder(divisionName, divisionType) {
+    if (divisionType == "Barangay") {
+        return `${divisionType} ${divisionName}`
+    } else {
+        return `${divisionName} ${divisionType}`
+    }
+}
