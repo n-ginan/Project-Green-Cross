@@ -27,4 +27,5 @@
 <h3>01/11/25</h3>
 <ul>
     <li>Finalized the data/credentials fill form at the credential page, the design and its logic for user errors are still not done yet</li>
+    <li>Added some labels and headers in the credential page for more definition</li>
 </ul>

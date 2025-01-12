@@ -5,6 +5,11 @@ body {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
+h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .background-credential {
     background-color: rgb(70, 138, 255);
     height: 100%;
@@ -29,13 +34,71 @@ body {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 10px
+    padding: 10px;
 }
 
-.name-row, .demograph-row, .password-row, .address-row {
+.mobile-section, .email-section, .first-name-section, .middle-initial-section, 
+.last-name-section, .suffix-section, .age-section, .birth-section, .nationality-section,
+.religion-section, .sex-section, .house-number-section, .street-section, .division-section,
+.city-section, .zip-code-section, .password-section, .confirm-password-section {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    font-size: 14px;
+    gap: 8px;
+}
+
+.sex-section-2 {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.name-row {
     background-color: aqua;
-    height: 100px;
+    height: 70px;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px 10px;
+}
+
+.demograph-row {
+    background-color: aqua;
+    height: 70px;
+    width: 650px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px 10px;
+}
+
+.contact-row {
+    background-color: blanchedalmond;
+    height: 70px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px 10px;
+}
+
+.address-row {
+    background-color: cadetblue;
+    height: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px 10px;
+}
+
+.password-row {
+    background-color: blanchedalmond;
+    height: 70px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px 10px;
 }
 
 .finish-btn {
@@ -110,6 +173,7 @@ body {
     border-radius: 5px;
     border: 1px solid rgb(197, 197, 197);
     padding-left: 5px;
+    position: relative;
 }
 
 .middle-initial, .age, .suffix, .house-number {
