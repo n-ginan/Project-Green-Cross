@@ -29,7 +29,7 @@ h3 {
 
 .input-credential-card {
     background-color: aliceblue;
-    height: 650px;
+    height: 730px;
     width: 700px;
     border-radius: 10px;
     display: flex;
@@ -39,8 +39,8 @@ h3 {
 
 .mobile-section, .email-section, .first-name-section, .middle-initial-section, 
 .last-name-section, .suffix-section, .age-section, .birth-section, .nationality-section,
-.religion-section, .sex-section, .house-number-section, .street-section, .division-section,
-.city-section, .zip-code-section, .password-section, .confirm-password-section {
+.religion-section, .sex-section, .house-number-section, .street-section, .division-section, .marital-section,
+.division-type-div, .city-section, .zip-code-section, .password-section, .confirm-password-section {
     display: flex;
     flex-direction: column;
     align-content: space-around;
@@ -85,7 +85,7 @@ h3 {
 
 .address-row {
     background-color: cadetblue;
-    height: 70px;
+    height: 150px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -166,7 +166,7 @@ h3 {
     border: 0px;
 }
 
-.first-name, .middle-initial, .last-name, .suffix, .age, .birth, .nationality, .mobile-number,
+.first-name, .middle-initial, .last-name, .suffix, .age, .birth, .nationality, .mobile-number, .division-type, .marital-status,
 .email, .street, .division, .house-number, .city, .region, .zip-code, .religion, .credential-password, .confirm-password {
     height: 40px;
     font-size: 14px;

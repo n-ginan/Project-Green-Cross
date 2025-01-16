@@ -144,19 +144,32 @@ function credential() {
                 "Cache-Control": "no-store"
             },
             body: JSON.stringify({
-                "full_name": `${formData["first_name"]} ${formData["middle_initial"]}. ${formData["last_name"]} ${formData["suffix"]}`,
+                "name": {
+                    "first_name": formData["first_name"],
+                    "middle_initial": formData["middle_initial"],
+                    "last_name": formData["last_name"],
+                    "suffix": formData["suffix"]
+                },  
                 "demograph": {
                     "age": formData["age"],
                     "birthdate": formData["birth"],
                     "sex": formData["sex"],
+                    "marital_status": formData["marital_status"],
                     "nationality": formData["nationality"],
                     "religion": formData["religion"]
+                },
+                "address": {
+                    "house_number": formData["house_number"],
+                    "street": formData["street"],
+                    "division": formData["division"],
+                    "division_type": formData["division_type"],
+                    "city": formData["city"],
+                    "zip_code": formData["zip_code"]
                 },
                 "contact": {
                     "mobile_number": formData["mobile_number"],
                     "email": formData["email"]
-                },
-                "full_address": `${formData["house_number"]} ${formData["street"]} street, ${divisionOrder(formData["division_name"], formData["division_type"])}\n${formData["city"]} ${formData["zip_code"]}`
+                }
             })
         }
     })

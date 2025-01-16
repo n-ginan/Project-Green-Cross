@@ -29,3 +29,7 @@
     <li>Finalized the data/credentials fill form at the credential page, the design and its logic for user errors are still not done yet</li>
     <li>Added some labels and headers in the credential page for more definition</li>
 </ul>
+<h3>01/16/25</h3>
+<ul>
+    <li>Refactored the database schema and finished the fetch api design for credentials</li>
+</ul>
