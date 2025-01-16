@@ -32,4 +32,5 @@
 <h3>01/16/25</h3>
 <ul>
     <li>Refactored the database schema and finished the fetch api design for credentials</li>
+    <li>Added the overlay for crud operations in the admin-dashboard html page and designed a few buttons in it</li>
 </ul>

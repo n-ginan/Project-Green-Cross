@@ -30,3 +30,76 @@ body {
 .pharmacist-section {
     background-color: coral;
 }
+
+.crud-employee-card {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.crud-overlay {
+    background-color: aliceblue;
+    height: 730px;
+    width: 700px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.crud-btns {
+    display: flex;
+    flex-direction: row;
+}
+
+.save-btn {
+    background-color: #3c84fb;
+    width: 300px;
+    height: 50px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.4;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    border: 0px;
+}
+
+.cancel-btn {
+    background-color: #ffffff;
+    width: 300px;
+    height: 50px;
+    color: #3c84fb;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.4;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    border: 2px solid #3c84fb;
+}
+
+.save-btn:hover, .cancel-btn:hover {
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 0 1px 4px 0 rgba(109, 108, 108, 0.8), 0 4px 3px 0 rgba(228, 228, 228, 0.4);
+    transition-duration: 0.4s;
+}
+
+.save-btn:active, .cancel-btn:active {
+    box-shadow: none;
+    font-size: 14px;
+    transition-duration: 0.2s;
+}

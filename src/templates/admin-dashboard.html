@@ -11,7 +11,15 @@
         <div class="dashboard-header">
             <h2>Admin Dashboard</h2>
         </div>
-        <input type="button" id="addEmployeeButton" class="add-employee-button" value="Employee Options">
+        <input type="button" id="crudEmployeeBtn" class="crud-employee-btn" value="Employee Options">
+        <div class="crud-employee-card" id="crudEmployeeCard">
+            <div class="crud-overlay" id="crudOverlay">
+                <div class="crud-btns" id="classBtns">
+                    <input type="button" class="save-btn" id="saveBtn" value="Save">
+                    <input type="button" class="cancel-btn" id="cancelBtn" value="Cancel">
+                </div>
+            </div>
+        </div>
         <div class="doctor-section">
             <h2>Doctor Section</h2>
         </div>
@@ -21,6 +29,6 @@
         <div class="pharmacist-section">
             <h2>Pharmacist Section</h2>
         </div>
-        <script src="../static/js/events/dashboard.js"></script>
+        <script src="../static/js/events/admin-dashboard.js"></script>
     </body>
 </html>
