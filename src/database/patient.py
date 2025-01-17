@@ -92,19 +92,8 @@ class PatientsCollection:
         try:
             collection = PatientsCollection.get_collection()
             data = {
-                "patient_name": {
-                    "first_name": patient_name["first_name"],
-                    "middle_initial": patient_name["middle_initial"],
-                    "last_name": patient_name["last_name"],
-                    "suffix": patient_name["suffix"]
-                },
-                "demograph": {
-                    "age": demograph["age"],
-                    "birth": demograph["birth"],
-                    "gender": demograph["gender"],
-                    "sex": demograph["sex"],
-                    "ethnicity": demograph["ethnicity"],
-                }
+                "patient_name": patient_name,
+                "demograph": demograph
             }
             return str(collection.find_one(data, {"_id": 1})["_id"])
         except Exception as e:
